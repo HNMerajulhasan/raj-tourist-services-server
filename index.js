@@ -85,7 +85,7 @@ async function run(){
          const result=await reviewCollection.insertOne(review);
          res.send(result);
       });
-
+ //Deleted crud operation
       app.delete('/reviews/:id',async(req,res)=>{
          const id =req.params.id;
          const query={_id:ObjectId(id)}
