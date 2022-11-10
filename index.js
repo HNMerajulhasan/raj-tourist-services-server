@@ -54,7 +54,7 @@ async function run(){
         const reviews=await cursor.toArray();
         res.send(reviews);
     });
-
+//review id section
     app.get('/reviews/:id',async(req,res)=>{
       const id=req.params.id;
       const query={_id: ObjectId(id)};
@@ -94,7 +94,7 @@ async function run(){
 
     }
     finally{
-
+         
     }
 }
 run().catch(err=>console.error(err));
