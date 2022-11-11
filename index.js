@@ -22,6 +22,12 @@ async function run(){
     try{
       const serviceCollection=client.db('touristServices').collection('services')
       const reviewCollection=client.db('touristServices').collection('reviews');
+      app.post('/Allservices',async(req,res)=>{
+        const service=req.body;
+        console.log(service);
+        const result=await serviceCollection.insertOne(service);
+        res.send(result);
+      })
 
        app.get('/services',async(req,res)=>{
         const query={}
