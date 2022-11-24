@@ -20,6 +20,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function run(){
     try{
+      //Database and collection
       const serviceCollection=client.db('touristServices').collection('services')
       const reviewCollection=client.db('touristServices').collection('reviews');
       app.post('/Allservices',async(req,res)=>{
@@ -108,9 +109,6 @@ async function run(){
 run().catch(err=>console.error(err));
 
 
-
-
-
 app.listen(port,()=>{
-    console.log(`raj-tourist-service server running On ${port}`);
+    console.log(`raj-tourist-service-server is running On ${port}`);
 })
